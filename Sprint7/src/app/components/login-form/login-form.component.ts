@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login-form',
@@ -10,10 +10,14 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 export class LoginFormComponent {
 
    loginForm = new FormGroup({
-    nome: new FormControl(),
-    senha: new  FormControl(""),
+    nome: new FormControl("", [Validators.required]),
+    senha: new  FormControl("", [Validators.required]),
    })
-   onFazerLogin() {
-      
+   onSubmitLogin() {
+      const  {nome, senha } = this.loginForm.value
+      if(!this.loginForm.valid || !nome || !senha) {
+        alert("Existem pontos não preenchidos!")
+        return
+      }
    }
 }
