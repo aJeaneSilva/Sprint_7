@@ -17,7 +17,7 @@ export class DashboardComponent implements OnInit {
   veiculoSelecionado: Veiculo = {
     id: -1,
     vehicle: "",
-    volumeTotal: 0,
+    volumetotal: 0,
     connected: 0,
     softwareUpdates: 0,
     img: "",

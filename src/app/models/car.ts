@@ -1,7 +1,7 @@
 export type Veiculo = {
     id: number
     vehicle: string
-    volumeTotal: number
+    volumetotal: number
     connected: number
     softwareUpdates: number
     vin: string

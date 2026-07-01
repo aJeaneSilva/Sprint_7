@@ -2,16 +2,15 @@
 <div class="shadow border border-black p-3">
     <h2>Veículos</h2>
     <select>
-        <option value="">Ranger</option>
-        <option value="">Mustang</option>
-        <option value="">Territory</option>
-        <option value="">Bronco Sport</option>
+        @for(veiculo of veiculos; track veiculo.id) {
+            <option value="{{veiculo.id}}">{{veiculo.vehicle}}</option>
+        }
     </select>
-</div>
+</div> 
 
-        <app-card [titulo]="'Total de Vendas'" />
-        <app-card [titulo]="'Conectados'" />
-        <app-card [titulo]="'Update Software'" />
+        <app-card [titulo]="'Total de Vendas'" [valor]= "veiculoSelecionado.volumetotal" />
+        <app-card [titulo]="'Conectados'" [valor]= "veiculoSelecionado.connected" />
+        <app-card [titulo]="'Update Software'" [valor]= "veiculoSelecionado.softwareUpdates" />
 
 </section>
 <section>
